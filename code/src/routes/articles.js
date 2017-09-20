@@ -7,7 +7,7 @@ var log = require(libs + 'log')(module);
 var db = require(libs + 'db/mongoose');
 var Article = require(libs + 'model/article');
 
-router.get('/', passport.authenticate('bearer', { session: false }), function(req, res) {
+router.get('/', function(req, res) {
 
 	Article.find(function (err, articles) {
 		if (!err) {
@@ -24,7 +24,7 @@ router.get('/', passport.authenticate('bearer', { session: false }), function(re
 	});
 });
 
-router.post('/', passport.authenticate('bearer', { session: false }), function(req, res) {
+router.post('/', function(req, res) {
 
 	var article = new Article({
 		title: req.body.title,
@@ -59,7 +59,7 @@ router.post('/', passport.authenticate('bearer', { session: false }), function(r
 	});
 });
 
-router.get('/:id', passport.authenticate('bearer', { session: false }), function(req, res) {
+router.get('/:id', function(req, res) {
 
 	Article.findById(req.params.id, function (err, article) {
 
@@ -87,7 +87,7 @@ router.get('/:id', passport.authenticate('bearer', { session: false }), function
 	});
 });
 
-router.put('/:id', passport.authenticate('bearer', { session: false }), function (req, res){
+router.put('/:id', function (req, res){
 	var articleId = req.params.id;
 
 	Article.findById(articleId, function (err, article) {

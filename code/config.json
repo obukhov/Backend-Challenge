@@ -1,11 +1,11 @@
 {
-    "port": 1337,
+    "port": 8080,
     "mongoose": {
         "uri": "mongodb://mongo/jodel"
     },
     "default": {
         "api": {
             "version" : "v1"
-        },
+        }
     }
 }

@@ -1,3 +1,7 @@
-FROM node:8.5-alpine
+FROM node
 
 EXPOSE 8080
+
+WORKDIR /usr/src/app
+
+ENTRYPOINT node server.js
