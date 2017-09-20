@@ -1,0 +1,32 @@
+{
+  "name": "jodel-challenge",
+  "version": "1.0.0",
+  "description": "Backend Code Challenge from Jodel",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/obukhov/Backend-Challenge.git"
+  },
+  "author": "aobukhov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/obukhov/Backend-Challenge/issues"
+  },
+  "homepage": "https://github.com/obukhov/Backend-Challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "debug": "^3.0.1",
+    "express": "^4.15.4",
+    "faker": "^4.1.0",
+    "mongoose": "^4.11.12",
+    "nconf": "^0.8.4",
+    "winston": "^2.3.1"
+  }
+}
