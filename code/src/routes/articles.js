@@ -59,6 +59,34 @@ router.post('/', function(req, res) {
 	});
 });
 
+router.get('/findByTitle/:title', function(req, res) {
+
+	Article.find(req.params.id, function (err, article) {
+
+		if(!article) {
+			res.statusCode = 404;
+
+			return res.json({
+				error: 'Not found'
+			});
+		}
+
+		if (!err) {
+			return res.json({
+				status: 'OK',
+				article:article
+			});
+		} else {
+			res.statusCode = 500;
+			log.error('Internal error(%d): %s',res.statusCode,err.message);
+
+			return res.json({
+				error: 'Server error'
+			});
+		}
+	});
+});
+
 router.get('/:id', function(req, res) {
 
 	Article.findById(req.params.id, function (err, article) {

@@ -1,11 +1,14 @@
 var mongoose = require('mongoose');
 
+// Use native promises
+mongoose.Promise = global.Promise;
+
 var libs = process.cwd() + '/src/';
 
 var log = require(libs + 'log')(module);
 var config = require(libs + 'config');
 
-mongoose.connect(config.get('mongoose:uri'));
+mongoose.connect(config.get('mongoose:uri'), {useMongoClient: true});
 
 var db = mongoose.connection;
 
